@@ -1,5 +1,3 @@
-// console.log('Client side JS file is loaded');
-
 const getForecast = (address) => {
     const URL = `http://localhost:3000/weather?address=${address}`;
     fetch(URL).then((response) => {
