@@ -34,7 +34,7 @@ app.get('', (req, res) => {
 app.get('/about', (req, res) => {
     res.render('about', {
         title: 'About Me',
-        msg: 'This is me',
+        msg: 'This site was created by John Aspen P. Catingub. It uses data from mapbox.com and weatherstack!',
         footerMsg: 'Created by Aspen'
     })
 });
