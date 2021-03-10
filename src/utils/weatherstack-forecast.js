@@ -1,6 +1,8 @@
 // DOCS: https://weatherstack.com/documentation
 const request = require('postman-request');
 
+
+
 const getForecast = (latitude, longitude, callback) => {
     const HOST = 'http://api.weatherstack.com';
     const API_KEY = '78b3f03c6a96dbeae0d9f037a5165954';
@@ -22,8 +24,10 @@ const getForecast = (latitude, longitude, callback) => {
             }
         }
         else if (body) {
-            const { temperature, feelslike, weather_descriptions: descriptions } = body.current;
-            const message = `It is currently ${descriptions[0]} with a temperature of ${temperature} degress Celsius. Feels like ${feelslike} out`; 
+            const { temperature, feelslike, weather_descriptions: descriptions, humidity, visibility } = body.current;
+            const message = `It is currently ${descriptions[0]} with a temperature of ${temperature} degress Celsius. Feels like ${feelslike} out.
+            Humidity: ${humidity}
+            Visibility: ${visibility} `; 
             callback(message, null);
         }
     });
