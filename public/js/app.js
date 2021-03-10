@@ -1,5 +1,7 @@
 const getForecast = (address) => {
-    const URL = `http://localhost:3000/weather?address=${address}`;
+    // const HOST = 'http://localhost:3000';
+    const HOST = '';
+    const URL = `${HOST}/weather?address=${address}`;
     fetch(URL).then((response) => {
         response.json().then((data) => {
             if (data.error) {

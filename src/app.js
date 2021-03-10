@@ -6,6 +6,7 @@ const mapbox = require('./utils/mapbox-geocoding');
 const weatherstack = require('./utils/weatherstack-forecast');
 
 const app = express();
+const port = process.env.PORT || 3000;
 
 // Define paths for Express CONFIG
 const PUBLIC_DIR = path.join(__dirname, '../public');
@@ -99,7 +100,7 @@ app.get('*', (req, res) => {
     });
 });
 
-// ========== EXECUTE ==========
-app.listen(3000, () => {
-    console.log('Server is up on port 3000');
+// ========== Localhost - EXECUTE ==========
+app.listen(port, () => {
+    console.log(`Server is up on port ${port}`);
 });
