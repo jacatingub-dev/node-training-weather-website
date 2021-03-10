@@ -1,3 +1,9 @@
 heroku keys:add // Only for first time setup
 heroku create APP_NAME
 // Heroku adds a remote URL git into yout git folder
+
+
+
+// Deployment
+git push heroku main 
+Heroku automatically runs npm start
